@@ -56,9 +56,47 @@ void ex3() {
     printf("Second biggest value is: %d\n", second);
 }
 
+// Ex 4
+int bitsUm (unsigned int n) {
+    int count = 0;
+    while (n > 0) {
+        if (n % 2 != 0) {
+            count ++;
+        }
+        n /= 2;
+    }
+    return count;
+}
+
+// Ex 5
+int trailingZ (unsigned int n) {
+    int count = 0;
+    while (n > 0) {
+        if (n % 2 == 0) {
+            count ++;
+        }
+        n /= 2;
+    }
+    return count;
+}
+
+
+// Ex 6
+int qDig (unsigned int n) {
+    int count = 0;
+    while (n != 0) {
+        n /= 10;
+        count ++;
+    }
+    printf("%d\n", count);
+    return count;
+}
+
+// Ex 7
+
 
 
 int main() {
-    ex3();
+    qDig(440);
     return 0;
 }
