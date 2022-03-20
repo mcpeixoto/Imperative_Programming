@@ -110,16 +110,8 @@ void pascal(int v[], int N){
         for (k=n-1; k>0; k--){
             v[k] = v[k] + v[k-1];
         }
-        // See how it works
-        //for (int i=0; i<6; i++){
-        //    printf("%d, ", v[i]);
-        //}
-        //printf("\n");
-
-        // Print do stor lol, does not work
-        for(k=n-1; k>0; k--){
-            v[k] += v[k-1];
-        }
+        
+        // print array
         for(k=0; k<=n; k++){
             printf("%d ", v[k]);
         }
