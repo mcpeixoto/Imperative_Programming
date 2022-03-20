@@ -81,9 +81,61 @@ int mdc2(int a, int b){
 }
 
 
+
+// TODO: 5
+// Carlos
+int mdc31(int a, int b) {
+    int c;
+
+    // Break case
+    if (a==b) {
+        return a;
+        }
+
+    if (a>b){
+        c = a%b;
+        return mdc31(c, b);
+        }
+
+    if (b>a){
+        c = a%b;
+        return mdc31(a, c);
+        }
+
+}
+
+
+// Ex 6
+// Recursive fibonacci
+// Cost: O(2^n)
+int fib1(int n) {
+    if (n == 0) {
+        return 0;
+    }
+    if (n == 1) {
+        return 1;
+    }
+    return fib1(n-1) + fib1(n-2);
+}
+
+
+// Iterative
+// Cost: O(n)
+int fib2(int n) {
+    int a = 0;
+    int b = 1;
+    int c;
+    for (int i=0; i<n; i++){
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    return c;
+}
+
+
 int main() {
-    float m;
-    m = mdc2(81, 423);
-    printf("%f\n", m);
+
+    printf("%d\n", mdc31(126, 45));
     return 0;
 }
