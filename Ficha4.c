@@ -102,10 +102,6 @@ int duplicaVogais(char *s){
     
 }
 
-int duplicaVogais2(char *s){
-0
-     
-}
 
 
 
