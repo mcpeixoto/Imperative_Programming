@@ -322,9 +322,14 @@ int comuns (int a[], int na, int b[], int nb){
     int waste[na];
     int n = 0;
 
+    // Para cada elemento de a, vamos ver se existe em b
     for (int i=0; i<na; i++){
-        if (check_in_array(a[i], b, nb) && !check_in_array(a[i], waste, n)){
+        // Se o elemento existir em b e já não ter sido contabilizado
+        if (check_in_array(a[i], b, nb) && 1 != check_in_array(a[i], waste, n)){
+            // Adicionar ao waste (ja foi contabilizado)
             waste[n] = a[i];
+
+            // Incrementar as contagens de comuns
             n++;
         }
     }
