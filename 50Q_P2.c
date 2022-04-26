@@ -59,7 +59,7 @@ void insertOrd(LInt *l, int x){
 // Ex 6
 
 int removeOneOrd (LInt *l, int x){
-    LInt ant;
+    LInt ant = NULL;
     LInt pt = *l;
 
     while (pt != NULL && pt->valor < x){
@@ -70,14 +70,31 @@ int removeOneOrd (LInt *l, int x){
         return 1;
     }
     if (ant == NULL){
-        *l = temp->prox;
+        ant = (*l)->prox;
+        free(*l);
+        *l = ant;
+
+    } else {
+        ant->prox = pt->prox;
+        free(pt);
     }
-    ant->prox = pt->prox;
-    free(pt);
+    
     return 0;
 }
 
+// usar o sitio
 
+int removeOneOrd (LInt *l, int x){
+    LInt tmp;
+    while((*l) != NULL && (*l)->valor < x){
+        l = &((*l)->prox);
+    }
+    if ((*l) != NULL){
+        tmp = (*l)->prox;
+        free(*l);
+        *l = tmp;
+        return 0;
+    } else return 1;
 
-
+}
 
